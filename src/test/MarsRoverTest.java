@@ -1,4 +1,4 @@
-package main;
+package MarsRover;
 
 import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
@@ -11,9 +11,8 @@ public class MarsRoverTest  {
     @Test
     public void checkPlateau() {
         MarsRover test001 = new MarsRover();
-        MarsRover.establishPlateau();
-        assertEquals("Hello", test001.);
-        assertEquals("The quick fox", ex001.capitalizeWord("the quick fox"));
-        assertEquals("Oh no, bears!!!", ex001.capitalizeWord("oh no, bears!!!"));
+        MarsRover.establishPlateau(20,10);
+        System.out.println("YES !!!");
+        assertEquals("Hello", "NO");
     }
 }
