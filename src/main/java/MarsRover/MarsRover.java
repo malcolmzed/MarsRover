@@ -59,6 +59,7 @@ class MarsRover {
 
 
     private static vector moveVector = new vector(0, 0);
+    private static String theJourney;
 
     public static
     boolean establishPlateau(int x, int y) {
@@ -111,6 +112,13 @@ class MarsRover {
             setHeading();
             return result;
         }
+    }
+    public static
+
+    boolean establishJourney(String journey){
+        theJourney = journey;
+
+        return true;
     }
 
     public static
@@ -209,7 +217,7 @@ class MarsRover {
 
         String theJourney;
 
-        theJourney = "MMRMMLMM";
+        theJourney = "MMRMMLMMR";
 
         ArrayList<HistoryRow> history = new ArrayList<HistoryRow>();
 
@@ -226,6 +234,6 @@ class MarsRover {
         for (int i = 0; i < theJourney.length(); i++) {
             processLetter(theJourney.charAt(i));
         }
-        return;
+        //return;
     }
 }

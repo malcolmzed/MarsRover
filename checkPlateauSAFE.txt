@@ -1,0 +1,14 @@
+
+P 16 16 #standard size
+P 4 4
+#P 0 4
+#this is a comment
+
+P 7 12
+P 12
+#P -1 -2
+P 6 12
+## ignore 1
+## ignore 2
+## ignore 3
+P 5 19

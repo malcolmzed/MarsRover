@@ -1,0 +1,16 @@
+## need to establish a plateau before establishing the initial state, 
+## so use pairs of line P and I
+P 16 16        #standard size
+I  8  8  N
+#
+P 16 16        #standard size
+I  0  0  S
+#
+P 16 16
+I  4  4  E
+#
+P 16 16
+I  4  4  W
+#
+P 16 16
+I  4  4  X

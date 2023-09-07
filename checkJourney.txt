@@ -1,0 +1,17 @@
+## each line of data begins with a letter:
+##
+##	P: establish plateau			
+##			int xsize, ysize;
+##
+##	I: establish initial state 		
+##			int x, y; char direction [N, S, E or W]
+##
+##	J: apply a journey				
+##		String journey [sequence of characters M, L or R] followed by int xpos   int ypos  char headig
+##
+# this is a comment
+##------------------------------------------
+P 16 16       #standard size
+I 8 8 N
+J MMRMM	  9 10 E    #destination = (10, 10) Heading E
+#------------------------------------------

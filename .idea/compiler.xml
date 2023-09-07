@@ -6,12 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="marsRover" />
+        <module name="mars-rover" />
         <module name="MarsRover" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="coding-exercises" target="1.8" />
+      <module name="marsRover" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
