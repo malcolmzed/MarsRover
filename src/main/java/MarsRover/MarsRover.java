@@ -1,50 +1,50 @@
 package MarsRover;
 
+import MarsRover.location.Heading;
+import MarsRover.vehicle.Rover;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public
-class MarsRover {
+import static MarsRover.location.Heading.E;
+import static MarsRover.location.Heading.N;
 
-    public static
-    class State {
+public class MarsRover {
+
+    public static class State {
         int sizeX;
         int sizeY;
         int posX;
         int posY;
         int heading;
 
-        State(
-                int sX, int sY,
-                int pX, int pY,
-                int h
-
-        ) {
+        State(int sX, int sY, int pX, int pY, int h) {
             sX = sizeX;
             sY = sizeY;
             pX = posX;
             pY = posY;
             h = heading;
         }
+
+
+
     }
 
     public static State currentState = new State(0, 0, 0, 0, 0);
 
-    public static
-    class vector {
+    public static class vector {
         int x;
         int y;
 
-        vector(int xx,
-               int yy) {
+        vector(int xx, int yy) {
             xx = x;
             yy = y;
         }
+
     }
 
-    public static
-    class HistoryRow {
+    public static class HistoryRow {
         int sequence, x, y, heading;
         String message;
 
@@ -55,14 +55,14 @@ class MarsRover {
             this.heading = heading;
             this.message = message;
         }
-    }
 
+    }
 
     private static vector moveVector = new vector(0, 0);
     private static String theJourney;
 
-    public static
-    boolean establishPlateau(int x, int y) {
+    public static boolean establishPlateau(int x, int y) {
+
         if (x < 1 || y < 1) {
             System.out.println("Invalid plateau dimensions");
             return false;
@@ -71,17 +71,17 @@ class MarsRover {
         MarsRover.currentState.sizeX = x;
         MarsRover.currentState.sizeY = y;
         return true;
+
     }
 
-    public static
-    boolean establishInitialState(int x, int y, char direction) {
+    public static boolean establishInitialState(int x, int y, char direction) {
 
-        if (x < 0 || y < 0
-            || x > MarsRover.currentState.sizeX
-            || y > MarsRover.currentState.sizeY) {
+        if (x < 0 || y < 0 || x > MarsRover.currentState.sizeX || y > MarsRover.currentState.sizeY) {
             System.out.println("Invalid initial location");
             return false;
-        } else {
+
+        }
+        else {
             MarsRover.currentState.posX = x;
             MarsRover.currentState.posY = y;
 
@@ -117,12 +117,10 @@ class MarsRover {
 
     boolean establishJourney(String journey){
         theJourney = journey;
-
         return true;
     }
 
-    public static
-    void setHeading() {
+    public static void setHeading() {
         switch (MarsRover.currentState.heading) {
             case 0:
                 MarsRover.moveVector.x = 0;
@@ -147,24 +145,22 @@ class MarsRover {
         return;
     }
 
-    public static
-    void rotateLeft() {
+    public static void rotateLeft() {
         MarsRover.currentState.heading = MarsRover.currentState.heading - 90;
         if (MarsRover.currentState.heading == -90) MarsRover.currentState.heading = 270;
         setHeading();
         return;
     }
 
-    public static
-    void rotateRight() {
+    public static void rotateRight() {
         MarsRover.currentState.heading = MarsRover.currentState.heading + 90;
         if (MarsRover.currentState.heading == 360) MarsRover.currentState.heading = 0;
         setHeading();
         return;
     }
 
-    public static
-    boolean move() {
+    public static boolean move() {
+
         int newX, newY;
 
         newX = MarsRover.currentState.posX + MarsRover.moveVector.x;
@@ -183,8 +179,7 @@ class MarsRover {
     }
 
 
-    public static
-    int processLetter(char theLetter) {
+    public static int processLetter(char theLetter) {
         System.out.println(
                 MarsRover.currentState.posX + " " +
                 MarsRover.currentState.posY + " " +
@@ -200,6 +195,7 @@ class MarsRover {
                 rotateRight();
         }
 
+
         System.out.println(
                 theLetter + " " +
                 MarsRover.currentState.posX + " " +
@@ -212,14 +208,11 @@ class MarsRover {
         return 1;
     }
 
-    public static
-    void main(String[] args) {
+    public static void main(String[] args) {
 
-        String theJourney;
+        String theJourney = "MMRMMLMMR";
 
-        theJourney = "MMRMMLMMR";
-
-        ArrayList<HistoryRow> history = new ArrayList<HistoryRow>();
+        ArrayList<HistoryRow> history = new ArrayList<>();
 
         history.add(new HistoryRow(1, 3, 3, 270, "OK1"));
 

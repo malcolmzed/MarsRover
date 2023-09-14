@@ -146,8 +146,9 @@ class MarsRoverTesting {
         }
     }
 
-    //@Test
+//    @Test
     public void initialStateTest() {
+        // This test contains no assertion
         String fileName = "checkInitialState.txt";  // in the local repository
         readFile(fileName);
     }
